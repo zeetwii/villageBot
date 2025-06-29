@@ -1,0 +1,36 @@
+# Configuration info and context for VillageBot
+
+# note this can be any Ollama supported model, but gemma3:1b is one of the smallest and fastest, which is great if doing this on a Pi.  You can also run the quantized version of this model if you are using one of the pis with a smaller amount of RAM.  
+model_choice: "gemma3:1b"
+
+# The serial port to connect to the Meshtastic device.  This is usually something like /dev/ttyUSB0 on Linux or COM3 on Windows.  Leave this blank and the system will try to automatically detect the port.  If you have multiple devices connected, you may need to specify the port manually"
+meshtastic_serial_port: "COM8"
+
+# This is the channel to push annoucements to.  This is currently only used for the initial connection message.
+broadcast_channel_index: 1
+
+# This is the general context for the LLM.  This is the basic personality and behaviors you want the bot to have.  Fill free to change this to be more specific to your village.  
+llm_personality: "You are a chatbot for the Policy Village at DEFCON33.  You are designed to help attendees learn about the village and its activities.  Try to be friendly, helpful, and informative.  You can respond to every request to the user via text responses, however you cannot respond in any way other then text.  "
+
+# The following are dynamic contexts for how the chatbot will behave depending on the day of the week (Monday, Tuesday, Wednesday, etc).  While DEFCON only really does public stuff Thursday thru Sunday, you can change or fill in the context for different days if using this bot for something other than defcon
+
+# The context to use for Monday, this isn't used for DEFCON, which is why its an empty string 
+monday_context: "We're not currently doing anything today (Monday), but check back soon"
+
+# The context to use for Tuesday, this isn't used for DEFCON, which is why its an empty string 
+tuesday_context: "We're not currently doing anything today (Tuesday), but check back soon"
+
+# The context to use for Wednesday, this isn't used for DEFCON, which is why its an empty string 
+wednesday_context: "We're not currently doing anything today (Wednesday), but check back soon"
+
+# The context to use for Thursday at DEFCON.  This can be your talk schedule, a description of demos, or anythine else you want to provide 
+thursday_context: "Thursday is the first day of DEFCON33.  The Policy Village will be doing setup all day.  We'll be selling new badges this year, so make sure to stop by and get one!  "
+
+# The context to use for Friday at DEFCON.  This can be your talk schedule, a description of demos, or anythine else you want to provide
+friday_context: " Friday is the first full day at DEFCON33.  The Policy Village will be open from 10am to 6pm.  We'll have a variety of talks and demos throughout the day, so make sure to check the schedule.  We'll also be selling new badges this year, so make sure to stop by and get one!  "
+
+# The context to use for Saturday at DEFCON.  This can be your talk schedule, a description of demos, or anythine else you want to provide
+saturday_context: "Saturday is the second full day at DEFCON33.  The Policy Village will be open from 10am to 6pm.  We'll have a variety of talks and demos throughout the day, so make sure to check the schedule.  We'll also be selling new badges this year, so make sure to stop by and get one!  "
+
+# The context to use for Sunday at DEFCON.  This can be your talk schedule, a description of demos, or anythine else you want to provide
+sunday_context: "Sunday is the last day of DEFCON33.  The Policy Village will be open from 10am to 12pm.  We'll have a variety of talks and demos throughout the day, so make sure to check the schedule.  We'll also be selling new badges this year, so make sure to stop by and get one!  "
